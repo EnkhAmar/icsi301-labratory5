@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container'
+import Overview from './Overview'
 
 
 function TabPanel(props) {
@@ -49,7 +50,12 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     paddingLeft: 16,
+    backgroundColor: 'rgb(81,45,168)!important',
   },
+  header: {
+    backgroundColor: 'rgb(103,58,183)',
+    height: 64,
+  }
 }));
 
 export default function SimpleTabs() {
@@ -63,11 +69,11 @@ export default function SimpleTabs() {
   return (
     <div className={classes.root}>
       <AppBar position="static" color='primary'>
-        <Typography component="div" style={{ height: '64px' }} />
-        <Typography align='left' component="div" variant="h3" style={{ height: '64px', paddingLeft: '40px' }} >
+        <Typography className={classes.header} component="div" style={{ height: '64px' }} />
+        <Typography className={classes.header} align='left' component="div" variant="h3" style={{ height: '64px', paddingLeft: '40px' }} >
           Name &#38; Title
         </Typography>
-        <Typography component="div" style={{ height: '64px' }} />
+        <Typography className={classes.header} component="div" style={{ height: '64px' }} />
 
         <Tabs className={classes.tabs} value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Overview" {...a11yProps(0)} />
@@ -78,7 +84,7 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Overview
+        <Overview />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Features
