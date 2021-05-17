@@ -10,9 +10,9 @@ import Container from '@material-ui/core/Container'
 import Tooltip from '@material-ui/core/Tooltip'
 import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button'
 
 import Overview from './Overview'
-import Features from './Features'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -88,7 +88,7 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <Tooltip title="Add" aria-label="add" style={{ position: "absolute", right: 20, transform: 'translateY(-50%)' }}>
-        <Fab color="secondary" className={classes.absolute}>
+        <Fab color="secondary">
           <AddIcon />
         </Fab>
       </Tooltip>
@@ -98,7 +98,7 @@ export default function SimpleTabs() {
         <Overview />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Features />
+        Features
       </TabPanel>
       <TabPanel value={value} index={2}>
         Details
@@ -109,6 +109,10 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={4}>
         Faq
       </TabPanel>
+
+      <Button variant="contained" color="secondary" style={{ position: "fixed", right: 0, bottom: 0, marginBottom: 40, marginRight: 40 }}>
+        VIEW SOURCE
+      </Button>
       
     </div>
   );

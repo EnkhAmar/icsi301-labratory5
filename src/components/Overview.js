@@ -50,9 +50,28 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const smallAvatar = (<Typography style={{ margin: 8 }}>
-                        <Typography component="div" style={{ background: "rgb(94,53,177)", borderRadius: "50%", width: "50px", height: "50px" }} />
-                    </Typography>)
+const smallAvatar = (
+    <Grid container style={{ margin: 20 }}>
+    <Grid item>
+        <div style={{ background: "rgb(94,53,177)", borderRadius: "50%", width: "60px", height: "60px" }}></div>
+    </Grid>
+    <Grid xs={12} sm container>
+        <Grid xd container direction="column" style={{ marginLeft: 60,  marginRight: 80 }}>
+            <Grid item>
+                <Typography variant="body1" style={{ color: 'rgb(97,97,97)', fontWeight: 600, textAlign: 'left' }}>  
+                    Lorem ipsum dolor sit amet
+                </Typography>
+            </Grid>
+            <Grid container justify="flex-start">
+                <Typography variant="caption" style={{ color: 'rgb(97,97,97)', textAlign: 'left' }}>
+                    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <span style={{ color: '#FF4081', fontWeight: 600 }}>proident minim</span>.
+                    <Divider />
+                </Typography>
+            </Grid>
+        </Grid>
+    </Grid>
+    </Grid>
+)
 
 
 function Overview() {
@@ -63,34 +82,34 @@ function Overview() {
             <Paper className={classes.paper} elevation={3} square >
                 <Grid container>
                     <Grid item zeroMinWidth>
-                    <CssBaseline />
-                    <Container maxWidth="sm">
-                        <Typography component="div" style={{ backgroundColor: 'rgb(178, 223, 219)', height: '20vh', width: '20vh', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: -24 }} >
-                            <PlayCircleFilledWhiteIcon style={{ color: 'white', fontSize: 40, cursor: 'pointer' }} />
-                        </Typography>
-                    </Container>
+                        <CssBaseline />
+                        <Container maxWidth="sm">
+                            <Typography component="div" style={{ backgroundColor: 'rgb(178, 223, 219)', height: '25vh', width: '25vh', display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: -24 }} >
+                                <PlayCircleFilledWhiteIcon style={{ color: 'white', fontSize: 40, cursor: 'pointer' }} />
+                            </Typography>
+                        </Container>
                     </Grid>
                     <Grid xs={12} sm container>
                         <Grid xs container direction="column" alignItems="flex-start" justify="space-around" spacing={2} >
 
                             <Grid item>
-                                <Typography variant="h4" style={{ color: 'rgb(97,97,97)' }}>
+                                <Typography variant="h5" style={{ color: 'rgb(97,97,97)' }}>
                                     Features
                                 </Typography>
                             </Grid>
                             <Grid container justify='flex-start'>
-                                <Typography variant="p" style={{ color: 'rgb(97,97,97)' }}>
+                                <Typography variant="body2" style={{ color: 'rgb(97,97,97)', textAlign: 'left' }}>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis pretium dolor, id tincidunt nunc.
                                 </Typography>
                             </Grid>
                             <Grid container justify='center'>
-                                <Typography variant="p" style={{ cursor: 'pointer', color: 'rgb(0,187,211)', fontWeight: 900, textAlign: 'center' }}>
+                                <Typography variant="body1" style={{ cursor: 'pointer', color: 'rgb(0,187,211)', fontWeight: 200, textAlign: 'center' }}>
                                     <Divider variant="fullWidth" />
                                     READ OUR FEATURES
                                 </Typography>
                             </Grid>
                         </Grid>
-                        <Grid>
+                        <Grid item>
                             <IconButton aria-label="settings">
                                 <MoreVertIcon />
                             </IconButton>
@@ -98,30 +117,28 @@ function Overview() {
                     </Grid>
                 </Grid>
             </Paper>
-            
+
             <Paper className={classes.paper} square>
                 <Grid container>
                     <Grid item xs style={{ padding: 15 }}>
-                        <Grid container justify="flex-start">
-                            <Typography variant="h4" style={{ color: 'rgb(97,97,97)' }}>
+                        <Grid container justify="space-between">
+                            <Typography variant="h5" style={{ color: 'rgb(97,97,97)', textAlign: 'left', }}>
                                 Details
                             </Typography>
+                            <IconButton aria-label="settings">
+                                <MoreVertIcon />
+                            </IconButton>
                         </Grid>
+                    </Grid>
+                    <Grid container>
                         <Grid container direction="column">
                             {smallAvatar}
-                            <Divider />
-                            {smallAvatar}
-                            {smallAvatar}
                             {smallAvatar}
                             {smallAvatar}
                         </Grid>
                     </Grid>
-                    <Grid >
-                        <IconButton aria-label="settings">
-                            <MoreVertIcon />
-                        </IconButton>
-                    </Grid>
                 </Grid>
+                        
             </Paper>
         </div>
     )

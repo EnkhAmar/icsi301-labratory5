@@ -12,15 +12,6 @@ function App() {
         color='primary'
       />
       <TabPanel />
-      {/* <Header value={3} /> */}
-      <header className="App-header">
-        <Button
-          size='large'
-          variant='contained'
-          color='secondary'
-        >Hello World</Button>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
     </div>
   );
 }
