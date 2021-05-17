@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
         margin: 'auto',
+        marginTop: 30,
+        marginBottom: 50,
         maxWidth: 860,
     },
     image: {
@@ -55,7 +57,7 @@ function Overview() {
         <div className={classes.root}>
             <Paper className={classes.paper} elevation={3} square >
                 <Grid container>
-                    <Grid item>
+                    <Grid item zeroMinWidth>
                     <CssBaseline />
                     <Container maxWidth="sm">
                         <Typography component="div" style={{ backgroundColor: 'rgb(178, 223, 219)', height: '20vh', width: '20vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
@@ -63,32 +65,42 @@ function Overview() {
                         </Typography>
                     </Container>
                     </Grid>
-                    <Grid item xs={12} sm container>
-                        <Grid item xs container direction="column" spacing={2}>
+                    <Grid xs={12} sm container>
+                        <Grid xs container direction="column" alignItems="flex-start" justify="space-around" spacing={2} >
 
-                            <Grid item xs>
-                                <Typography gutterBottom variant="subtitle1">
-                                    Standard license
-                                </Typography>
-                                <Typography variant="body2" gutterBottom>
-                                    Full resolution 1920x1080 • JPEG
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    ID: 1030114
+                            <Grid item>
+                                <Typography variant="h4">
+                                    Features
                                 </Typography>
                             </Grid>
-                            <Grid item>
-                                <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                    Remove
+                            <Grid container justify='flex-start'>
+                                <Typography variant="p">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis pretium dolor, id tincidunt nunc.
+                                </Typography>
+                            </Grid>
+                            <Grid container justify='center'>
+                                <Typography variant="p" style={{ cursor: 'pointer', color: 'rgba(0,187,211)', fontWeight: 900, textAlign: 'center' }}>
+                                    READ OUR FEATURES
                                 </Typography>
                             </Grid>
                         </Grid>
-                        <Grid item>
+                        <Grid>
                             <IconButton aria-label="settings">
                                 <MoreVertIcon />
                             </IconButton>
                         </Grid>
                     </Grid>
+                </Grid>
+            </Paper>
+            
+            <Paper className={classes.paper} square>
+                <Grid container>
+                    
+                </Grid>
+                <Grid item>
+                    <IconButton aria-label="settings">
+                        <MoreVertIcon />
+                    </IconButton>
                 </Grid>
             </Paper>
         </div>

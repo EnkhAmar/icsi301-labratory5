@@ -7,6 +7,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container'
+import Tooltip from '@material-ui/core/Tooltip'
+import Fab from '@material-ui/core/Fab'
+import AddIcon from '@material-ui/icons/Add';
 
 import Overview from './Overview'
 import Features from './Features'
@@ -84,6 +87,13 @@ export default function SimpleTabs() {
           <Tab label="Faq" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
+      <Tooltip title="Add" aria-label="add" style={{ position: "absolute", right: 20, transform: 'translateY(-50%)' }}>
+        <Fab color="secondary" className={classes.absolute}>
+          <AddIcon />
+        </Fab>
+      </Tooltip>
+
+
       <TabPanel value={value} index={0}>
         <Overview />
       </TabPanel>
@@ -99,6 +109,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={4}>
         Faq
       </TabPanel>
+      
     </div>
   );
 }
