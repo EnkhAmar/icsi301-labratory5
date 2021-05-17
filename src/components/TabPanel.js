@@ -7,8 +7,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container'
-import Overview from './Overview'
 
+import Overview from './Overview'
+import Features from './Features'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -87,7 +88,7 @@ export default function SimpleTabs() {
         <Overview />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Features
+        <Features />
       </TabPanel>
       <TabPanel value={value} index={2}>
         Details

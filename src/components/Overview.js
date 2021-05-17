@@ -1,4 +1,5 @@
 import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -7,6 +8,8 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box'
+import PlayCircleFilledWhiteIcon from '@material-ui/icons/PlayCircleFilledWhite';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +31,20 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: '100%',
         maxHeight: '100%',
     },
+    playSection: {
+        maxWidth: 200,
+        height: 200,
+        display: 'block',
+        backgroundColor: '#B2DFDB'
+    },
+    test: {
+        position: 'relative',
+        top: 0,
+        left: 0,
+        backgroundColor: '#B2DFDB',
+        height: '100%',
+        width: '200px',
+    }
 }));
 
 
@@ -37,9 +54,14 @@ function Overview() {
     return (
         <div className={classes.root}>
             <Paper className={classes.paper} elevation={3} square >
-                <Grid container spacing={2}>
+                <Grid container>
                     <Grid item>
-                        <Container style={{ backgroundColor: 'black' }} />
+                    <CssBaseline />
+                    <Container maxWidth="sm">
+                        <Typography component="div" style={{ backgroundColor: 'rgb(178, 223, 219)', height: '20vh', width: '20vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                            <PlayCircleFilledWhiteIcon style={{ color: 'white', fontSize: 40, cursor: 'pointer' }} />
+                        </Typography>
+                    </Container>
                     </Grid>
                     <Grid item xs={12} sm container>
                         <Grid item xs container direction="column" spacing={2}>
@@ -47,18 +69,18 @@ function Overview() {
                             <Grid item xs>
                                 <Typography gutterBottom variant="subtitle1">
                                     Standard license
-                </Typography>
+                                </Typography>
                                 <Typography variant="body2" gutterBottom>
                                     Full resolution 1920x1080 • JPEG
-                </Typography>
+                                </Typography>
                                 <Typography variant="body2" color="textSecondary">
                                     ID: 1030114
-                </Typography>
+                                </Typography>
                             </Grid>
                             <Grid item>
                                 <Typography variant="body2" style={{ cursor: 'pointer' }}>
                                     Remove
-                </Typography>
+                                </Typography>
                             </Grid>
                         </Grid>
                         <Grid item>
